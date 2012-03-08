@@ -84,6 +84,9 @@ EOF
 
     # Remove all but the latest 30 backups
     ssh ${HOST} "find $DST -maxdepth 1 -type d -name 'backup-*' | sort -r | awk 'NR>3' | xargs rm -rf"
+
+    # TODO: provide some sort of feedback (email?) on whether either
+    # of the last two commands succeeded.
 fi
 
 
